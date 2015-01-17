@@ -46,20 +46,31 @@ def createnetrules():
     if trafic:
         rows = []
         rows.append('#!/bin/sh')
+        rows.append('echo 1')
         rows.append('/sbin/iptables -F TRAFFIC_ACC_IN')
+        rows.append('echo 2')
         rows.append('/sbin/iptables -F TRAFFIC_ACC_OUT')
+        rows.append('echo 3')
         rows.append('/sbin/iptables -D INPUT -i %s -j TRAFFIC_ACC_IN' % lan)
+        rows.append('echo 4')
         rows.append('/sbin/iptables -D OUTPUT -o %s -j TRAFFIC_ACC_OUT' % lan)
-        rows.append('/sbin/iptables -D FORWARD -i %s -j TRAFFIC_ACC_IN' % wan)
-        rows.append('/sbin/iptables -D FORWARD -o %s -j TRAFFIC_ACC_OUT' % wan)
+        rows.append('echo 5')
         rows.append('/sbin/iptables -X TRAFFIC_ACC_IN')
+        rows.append('echo 6')
         rows.append('/sbin/iptables -X TRAFFIC_ACC_OUT')
+        rows.append('echo 7')
         rows.append('/sbin/iptables -N TRAFFIC_ACC_IN')
+        rows.append('echo 8')
         rows.append('/sbin/iptables -N TRAFFIC_ACC_OUT')
+        rows.append('echo 9')
         rows.append('/sbin/iptables -I INPUT -i %s -j TRAFFIC_ACC_IN' % lan)
+        rows.append('echo 10')
         rows.append('/sbin/iptables -I OUTPUT -o %s -j TRAFFIC_ACC_OUT' % lan)
+        rows.append('echo 11')
         rows.append('/sbin/iptables -Z TRAFFIC_ACC_IN')
+        rows.append('echo 12')
         rows.append('/sbin/iptables -Z TRAFFIC_ACC_OUT')
+        rows.append('echo 13')
 
         for iptrafgraf in iptrafgrafs:
             # print iptrafgraf.ip
