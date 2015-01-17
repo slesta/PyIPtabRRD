@@ -113,8 +113,7 @@ def Tcgraph():
 
         gh.write()
 
-        if 'lan' in hgraphfile_lg:
-            soubor.write('<td><img src="' + str(hgraphfile_lg).replace(wwwpath, '') + '"></td><td><img src="' + str(
+        soubor.write('<td><img src="' + str(hgraphfile_lg).replace(wwwpath, '') + '"></td><td><img src="' + str(
                 hgraphfile_lg).replace(wwwpath, '').replace('lan', 'wan') + '"></td></tr>')
 
     soubor.write(wwwfooter)
