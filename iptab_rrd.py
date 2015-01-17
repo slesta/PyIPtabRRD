@@ -50,6 +50,8 @@ def createnetrules():
         rows.append('/sbin/iptables -F TRAFFIC_ACC_OUT')
         rows.append('/sbin/iptables -D INPUT -i %s -j TRAFFIC_ACC_IN' % lan)
         rows.append('/sbin/iptables -D OUTPUT -o %s -j TRAFFIC_ACC_OUT' % lan)
+        rows.append('/sbin/iptables -D FORWARD -i %s -j TRAFFIC_ACC_IN' % wan)
+        rows.append('/sbin/iptables -D FORWARD -o %s -j TRAFFIC_ACC_OUT' % wan)
         rows.append('/sbin/iptables -X TRAFFIC_ACC_IN')
         rows.append('/sbin/iptables -X TRAFFIC_ACC_OUT')
         rows.append('/sbin/iptables -N TRAFFIC_ACC_IN')
