@@ -91,8 +91,8 @@ def Tcgraph():
         ca.arrow = '#FFFFFF'
 
         nadpis = adr + ' - ' + str(datetime.datetime.today())
-        graphwidth = 600
-        graphheight = 200
+        graphwidth = 400
+        graphheight = 150
 
         print hgraphfile_lg
 
