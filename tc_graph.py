@@ -54,8 +54,8 @@ def Tcgraph():
         startTime = str(now - 600)
         myRRD = RRD(filename)
 
-        def1 = DEF(rrdfile=myRRD.filename, vname='dsnamedownall', dsName='upall')
-        def2 = DEF(rrdfile=myRRD.filename, vname='dsnameupall', dsName='downall')
+        def1 = DEF(rrdfile=myRRD.filename, vname='dsnamedownall', dsName='downall')
+        def2 = DEF(rrdfile=myRRD.filename, vname='dsnameupall', dsName='upall')
 
 
         #cdef2 = CDEF(vname='mybitstx', rpn='%s,-8,*' % def2.vname)
