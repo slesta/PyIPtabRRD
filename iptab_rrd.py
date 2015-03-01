@@ -206,7 +206,7 @@ def feedrrd():
     #print bitsvalues
     for bitsvalue in bitsvalues:
         print bitsvalue
-        ip = bitsvalue[2].replace('.', '-') + bitsvalue[3].replace('.', '-')
+        ip = bitsvalue[2].replace('.', '-') + '_' + bitsvalue[3].replace('.', '-')
         ip = ip.replace('/', '_')
         #print ip
         filename = 'rrd/%s.rrd' % ip
