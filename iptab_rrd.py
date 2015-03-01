@@ -181,17 +181,20 @@ def feedrrd():
     bitsvalues = []
     rowbitsvalues = []
     lastip = ''
+    lastipp = ''
     i = 0
     for uprow in uplist:
         rowbitsvalues.append(uprow['bits'])
         lastip = uprow['dst']
+        lastipp = uprow['src']
+
         #print uprow
         i = i + 1
         #print i
         if i == 1:
             #print 'je po up'
             for downrow in downlist:
-                if downrow['src'] == lastip:
+                if downrow['src'] == lastip and downrow['dst'] == lastipp:
                     rowbitsvalues.append(downrow['bits'])
             i = 0
             rowbitsvalues.append(lastip)
