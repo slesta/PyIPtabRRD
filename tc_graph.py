@@ -54,8 +54,8 @@ def Tcgraph():
         startTime = str(now - 600)
         myRRD = RRD(filename)
 
-        def1 = DEF(rrdfile=myRRD.filename, vname='dsnameupall', dsName='upall')
-        def2 = DEF(rrdfile=myRRD.filename, vname='dsnamedownall', dsName='downall')
+        def1 = DEF(rrdfile=myRRD.filename, vname='dsnamedownall', dsName='upall')
+        def2 = DEF(rrdfile=myRRD.filename, vname='dsnameupall', dsName='downall')
 
 
         #cdef2 = CDEF(vname='mybitstx', rpn='%s,-8,*' % def2.vname)
@@ -91,7 +91,7 @@ def Tcgraph():
         ca.arrow = '#FFFFFF'
 
         nadpis = adr + ' - ' + str(datetime.datetime.today())
-        graphwidth = 400
+        graphwidth = 500
         graphheight = 150
 
         print hgraphfile_lg
