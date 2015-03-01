@@ -77,6 +77,11 @@ def createnetrules():
             #rows.append('echo %s' % iptrafgraf.ip  )
             rows.append('/sbin/iptables -A TRAFFIC_ACC_IN --src %s' % iptrafgraf)
             rows.append('/sbin/iptables -A TRAFFIC_ACC_OUT --dst %s' % iptrafgraf)
+        for iptrafgraf in iptrafgrafsud:
+            # print iptrafgraf.ip
+            #rows.append('echo %s' % iptrafgraf.ip  )
+            rows.append('/sbin/iptables -A TRAFFIC_ACC_IN --src {0} --dst {1}'.format(iptrafgraf[0], iptrafgraf[1]))
+            rows.append('/sbin/iptables -A TRAFFIC_ACC_OUT --dst {0} --src {1}'.format(iptrafgraf[1], iptrafgraf[0]))
 
 
     else:
