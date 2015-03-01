@@ -198,6 +198,7 @@ def feedrrd():
                     rowbitsvalues.append(downrow['bits'])
             i = 0
             rowbitsvalues.append(lastip)
+            rowbitsvalues.append(lastipp)
             bitsvalues.append(rowbitsvalues)
             rowbitsvalues = []
 
@@ -205,7 +206,7 @@ def feedrrd():
     #print bitsvalues
     for bitsvalue in bitsvalues:
         print bitsvalue
-        ip = bitsvalue[2].replace('.', '-')
+        ip = bitsvalue[2].replace('.', '-') + bitsvalue[3].replace('.', '-')
         ip = ip.replace('/', '_')
         #print ip
         filename = 'rrd/%s.rrd' % ip
